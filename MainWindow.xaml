@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Stoica_Alexia_lab2"
         mc:Ignorable="d"
-        Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Virtual Doughnuts Factory" Height="450" Width="800" ResizeMode="NoResize" Loaded="frmMain1_Loaded">
     <Grid x:Name="frmMain" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" AutomationProperties.Name="Virtual Doghnuts Factory">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*"/>
@@ -75,7 +75,7 @@
             </Canvas>
         </GroupBox>
         <Label x:Name="lblQuantity" Content="Quantity" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="10,266,0,0"/>
-        <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="60" Grid.Column="1" Margin="71,270,0,0"/>
+        <TextBox x:Name="txtQuantity" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="60" Grid.Column="1" Margin="71,270,0,0" KeyUp="txtQuantity_KeyPress"/>
         <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Grid.Column="1" Margin="197,271,0,0"/>
         <Label x:Name="lblTitle1" Content="Doughnuts - Bake &amp; Sale" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="178,26,0,0" FontWeight="Bold" FontSize="24"/>
         <TextBox x:Name="txtChocolateFilled" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Grid.Column="1" Margin="477,153,161.6,0" IsReadOnly="True"/>
@@ -84,20 +84,21 @@
         <TextBox x:Name="txtTotal" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" Grid.Column="1" Margin="410,374,0,0" IsReadOnly="True" TextChanged="txtTotal_TextChanged"/>
         <Button x:Name="btnAddToSale" Content="Add To Sale" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Grid.Column="1" Margin="550,278,0,0"/>
         <Button x:Name="btnRemoveItem" Content="Remove Item" Grid.Column="1" HorizontalAlignment="Left" Margin="550,316,0,0" VerticalAlignment="Top" Width="75"/>
-        <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="131" Grid.ColumnSpan="3">
-            <MenuItem Header="File" >
-                <MenuItem Header="Exit"/>
+        <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="131" Margin="0,26,0,0">
+            <MenuItem Header="File">
+                <MenuItem Header="Exit" Click="exitToolStripMenuItem_Click"/>
             </MenuItem>
-            <MenuItem Header="_Doughnuts" >
-               
-                  <MenuItem Header="Make">
+            <MenuItem Header="_Doughnuts">
+                <MenuItem Header="Make">
                     <MenuItem Header="Raised">
-                        <MenuItem x:Name="glazedMenuItem" Header="Glazed"/>
-                        <MenuItem x:Name="sugarMenuItem" Header="Sugar"/>
+                        <MenuItem x:Name="glazedToolStripMenuItem" Header="Glazed" Click="glazedToolStripMenuItem_Click" IsCheckable="True"/>
+                        <MenuItem x:Name="sugarToolStripMenuItem" Header="Sugar" IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                     </MenuItem>
                     <MenuItem Header="Filled"/>
                 </MenuItem>
+                <MenuItem x:Name="mnuStop" Header="Stop" Click="stopToolStripMenuItem_Click" />
             </MenuItem>
         </Menu>
+
     </Grid>
 </Window>
