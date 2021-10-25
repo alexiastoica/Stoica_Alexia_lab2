@@ -30,7 +30,7 @@ namespace Stoica_Alexia_lab2
 
         private void InitializeComponent()
         {
-            this.doughnutTimer = new DispatcherTimer;
+            this.doughnutTimer = new DispatcherTimer();
             this.doughnutTimer.Tick += new System.EventHandler(this.doughnutTimer_Tick);
         }
 
@@ -39,11 +39,7 @@ namespace Stoica_Alexia_lab2
             InitializeComponent();
         }
 
-        private void doughnutTimer_Tick(object sender, EventArgs e)
-        {
-            Doughnut aDoughnut = new Doughnut(this.Flavor);
-            DoughnutComplete();
-        }
+      
 
         private void doughnutTimer_Tick(object sender, EventArgs e)
         {

@@ -51,7 +51,7 @@ namespace Stoica_Alexia_lab2
             {
                 case DoughnutType.Glazed:
                     mRaisedGlazed++;
-                    txtGlasedRaised.Text = mRaisedGlazed.ToString();
+                    txtGlazedRaised.Text = mRaisedGlazed.ToString();
                     break;
 
                 case DoughnutType.Sugar:
